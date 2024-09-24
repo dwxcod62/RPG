@@ -5,21 +5,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 700f;
+
+    bool IsMoving
+    {
+        set
+        {
+            isMoving = value;
+            animator.SetBool("isMoving", isMoving);
+        }
+    }
+    public float moveSpeed = 100f;
     public float maxSpeed = 8f;
-    public float collisionOffset = 0.05f;
-    public ContactFilter2D movementFilter;
-    public SwordAttack swordAttack;
-    public bool canMove = true;
+    public float idleFriction = 0.9f;
+
+    public GameObject SwordHitbox;
+
+    bool isMoving = false;
+    bool canMove = true;
 
     Vector2 movementInput;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
 
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,64 +38,44 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (canMove)
         {
-            if (movementInput != Vector2.zero)
+            if (canMove && movementInput != Vector2.zero)
             {
-                bool success = TryMove(movementInput);
+                // ClampMagnitude ensures that the vector will not exceed the given length
+                rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
 
-                if (!success)
+                // Set direction of sprite to movement direction
+                if (movementInput.x < 0)
                 {
-                    success = TryMove(new Vector2(movementInput.x, 0));
+                    spriteRenderer.flipX = true;
                 }
-                if (!success)
+                else if (movementInput.x > 0)
                 {
-                    success = TryMove(new Vector2(0, movementInput.y));
+                    spriteRenderer.flipX = false;
                 }
-                animator.SetBool("isMoving", success);
+                IsMoving = true;
+
             }
             else
             {
-                animator.SetBool("isMoving", false);
-            }
-
-
-            // Set direction of sprite to movement direction
-            if (movementInput.x < 0)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if (movementInput.x > 0)
-            {
-                spriteRenderer.flipX = false;
-
+                // rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+                IsMoving = false;
             }
         }
     }
+    // --------------------------------------
 
-    private bool TryMove(Vector2 direction)
+    void LockMovement()
     {
-        if (direction != Vector2.zero)
-        {
-            int count = rb.Cast(
-                        direction,
-                        movementFilter,
-                        castCollisions,
-                        moveSpeed * Time.fixedDeltaTime + collisionOffset
-                    );
-            if (count == 0)
-            {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            }
-            return false;
-        }
-        else
-        {
-            return false;
-        }
+        canMove = false;
     }
 
+    void UnLockMovement()
+    {
+        canMove = true;
+    }
+
+    // --------------------------------------
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
@@ -95,36 +83,6 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
-        animator.SetTrigger("swordAttack");
+        animator.SetTrigger("isAttack");
     }
-
-    public void SwordAttack()
-    {
-        LockMovement();
-        if (spriteRenderer.flipX == true)
-        {
-            swordAttack.AttackLeft();
-        }
-        else
-        {
-            swordAttack.AttackRight();
-        }
-    }
-
-    public void LockMovement()
-    {
-        canMove = false;
-    }
-
-    public void UnLockMovement()
-    {
-        canMove = true;
-    }
-
-    public void EndSwordAttack()
-    {
-        UnLockMovement();
-        swordAttack.StopAttack();
-    }
-
 }

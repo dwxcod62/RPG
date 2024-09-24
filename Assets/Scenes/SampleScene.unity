@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.005, y: -0.009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 602653523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.005, y: -0.009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -558,6 +558,129 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
   m_PrefabInstance: {fileID: 1842194535}
   m_PrefabAsset: {fileID: 0}
+--- !u!90 &1523786140
+Avatar:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Automatic Avatar
+  m_AvatarSize: 500
+  m_Avatar:
+    serializedVersion: 3
+    m_AvatarSkeleton:
+      data:
+        m_Node:
+        - m_ParentId: -1
+          m_AxesId: -1
+        m_ID: 00000000
+        m_AxesArray: []
+    m_AvatarSkeletonPose:
+      data:
+        m_X:
+        - t: {x: 0.492, y: -0.085, z: -0.0002250002}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+    m_DefaultPose:
+      data:
+        m_X:
+        - t: {x: 0.492, y: -0.085, z: -0.0002250002}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+    m_SkeletonNameIDArray: 00000000
+    m_Human:
+      data:
+        serializedVersion: 2
+        m_RootX:
+          t: {x: 0, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        m_Skeleton:
+          data:
+            m_Node: []
+            m_ID: 
+            m_AxesArray: []
+        m_SkeletonPose:
+          data:
+            m_X: []
+        m_LeftHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_RightHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneMass:
+        - 0.14545456
+        - 0.12121213
+        - 0.12121213
+        - 0.048484854
+        - 0.048484854
+        - 0.009696971
+        - 0.009696971
+        - 0.030303033
+        - 0.14545456
+        - 0.14545456
+        - 0.012121214
+        - 0.048484854
+        - 0.006060607
+        - 0.006060607
+        - 0.024242427
+        - 0.024242427
+        - 0.01818182
+        - 0.01818182
+        - 0.006060607
+        - 0.006060607
+        - 0.0024242427
+        - 0.0024242427
+        - 0
+        - 0
+        - 0
+        m_Scale: 1
+        m_ArmTwist: 0.5
+        m_ForeArmTwist: 0.5
+        m_UpperLegTwist: 0.5
+        m_LegTwist: 0.5
+        m_ArmStretch: 0.05
+        m_LegStretch: 0.05
+        m_FeetSpacing: 0
+        m_HasLeftHand: 0
+        m_HasRightHand: 0
+        m_HasTDoF: 0
+    m_HumanSkeletonIndexArray: 
+    m_HumanSkeletonReverseIndexArray: 
+    m_RootMotionBoneIndex: -1
+    m_RootMotionBoneX:
+      t: {x: 0, y: 0, z: 0}
+      q: {x: 0, y: 0, z: 0, w: 1}
+      s: {x: 1, y: 1, z: 1}
+    m_RootMotionSkeleton:
+      data:
+        m_Node: []
+        m_ID: 
+        m_AxesArray: []
+    m_RootMotionSkeletonPose:
+      data:
+        m_X: []
+    m_RootMotionSkeletonIndexArray: 
+  m_TOS:
+    0: 
+  m_HumanDescription:
+    serializedVersion: 3
+    m_Human: []
+    m_Skeleton: []
+    m_ArmTwist: 0.5
+    m_ForeArmTwist: 0.5
+    m_UpperLegTwist: 0.5
+    m_LegTwist: 0.5
+    m_ArmStretch: 0.05
+    m_LegStretch: 0.05
+    m_FeetSpacing: 0
+    m_GlobalScale: 1
+    m_RootMotionBoneName: 
+    m_HasTranslationDoF: 0
+    m_HasExtraRoot: 0
+    m_SkeletonHasParents: 1
 --- !u!1 &1623764739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,21 +4791,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3004165033031561907, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: 153ed3b09faa5004aacc234b883d7a57, type: 3}
-    - target: {fileID: 3004165033031561907, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player
+    - target: {fileID: 2421115299312206483, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3399858113607220025, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: 3399858113607220025, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.009
       objectReference: {fileID: 0}
     - target: {fileID: 3399858113607220025, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4717,12 +4836,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.123488694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.13284415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6752746857859175675, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
-      propertyPath: collisionOffset
-      value: 0.02
+    - target: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.018255651
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756744110942019708, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.049600244
       objectReference: {fileID: 0}
     - target: {fileID: 8714773118275763275, guid: 9aa815e64e20a984faa9daa5b94b36e8, type: 3}
       propertyPath: swordCollision
@@ -5438,11 +5569,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6220398785987071387, guid: 8ff00e86c117d6348ba44c14d9883b46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.492
+      value: 0.343
       objectReference: {fileID: 0}
     - target: {fileID: 6220398785987071387, guid: 8ff00e86c117d6348ba44c14d9883b46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.085
+      value: -0.103
       objectReference: {fileID: 0}
     - target: {fileID: 6220398785987071387, guid: 8ff00e86c117d6348ba44c14d9883b46, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5476,6 +5607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8460353201792650929, guid: 8ff00e86c117d6348ba44c14d9883b46, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 1523786140}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
